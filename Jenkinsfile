@@ -8,6 +8,7 @@ pipeline {
         stage('Stage1') {
             steps {
                 echo 'Hello World'
+                sleep 5
             }
         }
     }
