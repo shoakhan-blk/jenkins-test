@@ -1,8 +1,8 @@
 #!groovy
 pipeline {
     agent any
-    options {
-        timeout(time: 3, unit: 'SECONDS') 
+    options {        
+        timeout(time: 3, unit: 'SECONDS', elastic: 1.5)
     }
     stages {
         stage('Stage1') {
