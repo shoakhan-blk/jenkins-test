@@ -1,7 +1,14 @@
 #!groovy
 pipeline {
-  agent none  
-  stages ("build") {
-  }
-  timeout(time: 3, unit: 'SECONDS')
+    agent any
+    options {
+        timeout(time: 3, unit: 'SECONDS') 
+    }
+    stages {
+        stage('Stage1') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
 }
