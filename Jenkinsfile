@@ -1,4 +1,4 @@
-#!/usr/bin/env groovy
+#!groovy
 pipeline {
   timeout(time: 3, unit: 'SECONDS') 
 }
