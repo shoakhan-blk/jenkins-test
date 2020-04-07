@@ -1,7 +1,7 @@
 #!groovy
 pipeline {
-  agent none
-  timeout(time: 3, unit: 'SECONDS') 
-  stage('Example Build') {
+  agent none  
+  stages('Example Build') {
   }
+  timeout(time: 3, unit: 'SECONDS')
 }
