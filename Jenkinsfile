@@ -1,7 +1,7 @@
 #!groovy
 pipeline {
     agent any
-    jobs('adding elastic timeout') {   
+    job('adding elastic timeout') {   
         wrappers {
             timeout {
                 elastic(100, 3, 1)
