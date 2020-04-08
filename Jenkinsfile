@@ -1,14 +1,18 @@
 #!groovy
 pipeline {
     agent any
-    options {        
-        timeout(time: 3, unit: 'SECONDS')
+    jobs('adding elastic timeout') {   
+        wrappers {
+            timeout {
+                elastic(100, 3, 1)
+            }
+        }
     }
     stages {
         stage('Stage1') {
             steps {
                 echo 'Building Future'
-                sleep 5
+                sleep 75
             }
         }
     }
