@@ -4,7 +4,7 @@ def call(String projectName) {
     echo "fetching previous build duration"
     def job=hudson.model.Hudson.instance.getItem("jenkins-v2")
     //job = hudson.model.Hudson.instance.getItem("jenkins-v2")
-    //build = job.getLastBuild()
+    def build = job.getLastBuild()
     //println("Build number is ${build.getPreviousBuild().getNumber()}")
     //println("Build duration is ${build.getPreviousBuild().getDuration()}")
     //println("Build number is ${build.getPreviousBuild().getPreviousBuild().getNumber()}")
