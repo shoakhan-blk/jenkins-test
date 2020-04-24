@@ -1,3 +1,4 @@
+@NonCPS
 def call(String projectName) {
   echo "fetching previous build duration"
   job = hudson.model.Hudson.instance.getItem("jenkins-v2")
