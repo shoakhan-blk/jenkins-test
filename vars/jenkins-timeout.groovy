@@ -8,6 +8,4 @@ def call(String projectName) {
   println("Build duration is ${build.getPreviousBuild().getPreviousBuild().getDuration()}")
   echo "fetched previous build duration"
 }
-return [
-    call: this.&call
-]
+return this
