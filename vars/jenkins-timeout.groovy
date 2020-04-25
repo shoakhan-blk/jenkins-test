@@ -5,10 +5,15 @@ def call(String projectName) {
     def job=hudson.model.Hudson.instance.getItem("jenkins-v2")
     //job = hudson.model.Hudson.instance.getItem("jenkins-v2")
     def build = job.getLastBuild()
-    println("Build number is ${build.getPreviousBuild().getNumber()}")
-    println("Build duration is ${build.getPreviousBuild().getDuration()}")
-    println("Build number is ${build.getPreviousBuild().getPreviousBuild().getNumber()}")
-    println("Build duration is ${build.getPreviousBuild().getPreviousBuild().getDuration()}")
+    Integer averageElasticBuildTime = 30
+    Integer numberOfBuilds=5
+    Float totalBuildTime=0
+    averageElasticBuildTime = (lastSuccessfullBuildTime(build,numberOfBuilds,totalBuildTime)/5)*0.5
+    //println("Build number is ${build.getPreviousBuild().getNumber()}")
+    //println("Build duration is ${build.getPreviousBuild().getDuration()}")
+    //println("Build number is ${build.getPreviousBuild().getPreviousBuild().getNumber()}")
+    //println("Build duration is ${build.getPreviousBuild().getPreviousBuild().getDuration()}")
+    println("value of average elastic build time is ${averageElasticBuildTime}")
     echo "fetched previous build duration" 
   } 
   catch (Exception e) {
