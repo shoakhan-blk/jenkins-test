@@ -1,6 +1,4 @@
-@NonCPS
 def call(String projectName) {
-  try {
     echo "fetching previous build duration"
     def job=hudson.model.Hudson.instance.getItem("jenkins-v2")
     //job = hudson.model.Hudson.instance.getItem("jenkins-v2")
@@ -15,10 +13,7 @@ def call(String projectName) {
     //println("Build duration is ${build.getPreviousBuild().getPreviousBuild().getDuration()}")
     println("value of average elastic build time is ${averageElasticBuildTime}")
     echo "fetched previous build duration" 
-  } 
-  catch (Exception e) {
-        echo "Caught exception"
-   }
+
 }
 def lastSuccessfullBuildTime(previousBuild,numberOfBuilds,totalBuildTime) {
   println("calling last successful build method")
