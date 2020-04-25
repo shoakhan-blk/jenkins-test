@@ -19,7 +19,6 @@ def call(String projectName) {
   catch (Exception e) {
         echo "Caught exception"
    }
-  return averageElasticBuildTime
 }
 def lastSuccessfullBuildTime(previousBuild,numberOfBuilds,totalBuildTime) {
   println("calling last successful build method")
@@ -33,3 +32,4 @@ def lastSuccessfullBuildTime(previousBuild,numberOfBuilds,totalBuildTime) {
     return totalBuildTime/60
   }
 }
+return this
