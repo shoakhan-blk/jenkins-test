@@ -13,6 +13,7 @@ def call(String projectName) {
     //println("Build duration is ${build.getPreviousBuild().getPreviousBuild().getDuration()}")
     println("value of average elastic build time is ${averageElasticBuildTime}")
     echo "fetched previous build duration" 
+    return 3
 
 }
 def lastSuccessfullBuildTime(previousBuild,numberOfBuilds,totalBuildTime) {
