@@ -14,6 +14,17 @@ def call(String projectName) {
   catch (Exception e) {
         echo "Caught exception"
    }
-  
+}
+def lastSuccessfullBuildTime(previousBuild,numberOfBuilds,totalBuildTime) {
+  println("calling last successful build method")
+  if(previousBuild != null && numberOfBuilds>0) {
+    echo "Build time of last build is ${previousBuild.getDuration()/1000} seconds"
+    totalBuildTime=(previousBuild.getDuration()/1000)+totalBuildTime
+    lastSuccessfullBuildTime(previousBuild.getPreviousBuild(),--numberOfBuilds,totalBuildTime)
+  }
+  else {
+    echo "Total build time of last 5 builds in minutes is ${totalBuildTime/60}"
+    return totalBuildTime/60
+  }
 }
 return this
