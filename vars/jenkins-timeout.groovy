@@ -2,7 +2,7 @@ def call(String projectName) {
     echo "fetching previous build duration"
     def job=hudson.model.Hudson.instance.getItem("jenkins-v2")
     def build = job.getLastBuild()
-    Integer averageElasticBuildTime = 30
+    Float averageElasticBuildTime = 30
     Integer numberOfBuilds=5
     Float totalBuildTime=0
     averageElasticBuildTime = (lastSuccessfullBuildTime(build,numberOfBuilds,totalBuildTime)/5)*1.5
