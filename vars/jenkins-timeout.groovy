@@ -8,7 +8,7 @@ def call(String projectName) {
     averageElasticBuildTime = (lastSuccessfullBuildTime(build,numberOfBuilds,totalBuildTime)/5.0)*1.5
     println("value of average elastic build time is ${averageElasticBuildTime}")
     echo "fetched previous build duration" 
-    return averageElasticBuildTime
+    return ${averageElasticBuildTime}
 
 }
 def lastSuccessfullBuildTime(previousBuild,numberOfBuilds,totalBuildTime) {
