@@ -19,7 +19,7 @@ def lastSuccessfullBuildTime(previousBuild,numberOfBuilds,totalBuildTime) {
     lastSuccessfullBuildTime(previousBuild.getPreviousBuild(),--numberOfBuilds,totalBuildTime)
   }
   else {
-    echo "Total build time of last 5 builds in minutes is ${totalBuildTime/60.0}"
+    echo "Total build time of last 5 build in minutes is ${totalBuildTime/60.0}"
     return totalBuildTime/60.0
   }
 }
