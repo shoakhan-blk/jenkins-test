@@ -1,3 +1,4 @@
+#!/usr/bin/env groovy
 import hudson.model.Hudson
 
 def call(branchName,numberOfBuilds,additionalTime) {
