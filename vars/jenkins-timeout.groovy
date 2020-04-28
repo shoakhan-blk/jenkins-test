@@ -2,6 +2,7 @@ def call(branchName,numberOfBuilds,additionalTime) {
     echo "fetching previous build duration"
     def lastBuild=hudson.model.Hudson.instance.getItem(branchName).getLastSuccessfulBuild()
     println("type of class is ${lastBuild.getClass()}")
+    println("type of class after typecasting is ${(hudson.model.Hudson.instance)lastBuild.getClass()}")
     Float totalBuildTime=0.0
     Integer averageBuild=5
     return (lastSuccessfullBuildTime(lastBuild,numberOfBuilds,totalBuildTime)/averageBuild)*additionalTime
