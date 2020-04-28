@@ -1,14 +1,9 @@
 def call(branchName,numberOfBuilds,additionalTime) {
     echo "fetching previous build duration"
     def lastBuild=hudson.model.Hudson.instance.getItem(branchName).getLastBuild()
-    //def build = job.getLastBuild()
     Float totalBuildTime=0.0
     Integer averageBuild=5
-    Float averageElasticBuildTime = (lastSuccessfullBuildTime(lastBuild,numberOfBuilds,totalBuildTime)/averageBuild)*additionalTime
-    println("value of average elastic build time is ${averageElasticBuildTime}")
-    echo "fetched previous build duration" 
-    return averageElasticBuildTime
-
+    return (lastSuccessfullBuildTime(lastBuild,numberOfBuilds,totalBuildTime)/averageBuild)*additionalTime
 }
 def lastSuccessfullBuildTime(previousBuild,numberOfBuilds,totalBuildTime) {
   println("calling last successful build method")
