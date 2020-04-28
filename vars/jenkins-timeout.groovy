@@ -4,7 +4,7 @@ def call(branchName,numberOfBuilds,additionalTime) {
     //def build = job.getLastBuild()
     Float totalBuildTime=0.0
     Integer averageBuild=5
-    Float averageElasticBuildTime = (lastSuccessfullBuildTime(build,numberOfBuilds,totalBuildTime)/averageBuild)*additionalTime
+    Float averageElasticBuildTime = (lastSuccessfullBuildTime(lastBuild,numberOfBuilds,totalBuildTime)/averageBuild)*additionalTime
     println("value of average elastic build time is ${averageElasticBuildTime}")
     echo "fetched previous build duration" 
     return averageElasticBuildTime
