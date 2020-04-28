@@ -11,7 +11,7 @@ def totalLastSuccessfulBuildTime(previousBuild,numberOfBuilds,totalBuildTime) {
   if(previousBuild != null && numberOfBuilds>0) {
     echo "Build time of last build is ${previousBuild.getDuration()/1000.0} seconds"
     totalBuildTime=(previousBuild.getDuration()/1000.0)+totalBuildTime
-    lastSuccessfullBuildTime(previousBuild.getPreviousSuccessfulBuild(),--numberOfBuilds,totalBuildTime)
+    totalLastSuccessfulBuildTime(previousBuild.getPreviousSuccessfulBuild(),--numberOfBuilds,totalBuildTime)
   }
   else {
     echo "Total build time of last 5 build in minutes is ${totalBuildTime/60.0}"
