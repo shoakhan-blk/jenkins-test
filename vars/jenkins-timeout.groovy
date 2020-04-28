@@ -4,9 +4,9 @@ def call(branchName,numberOfBuilds,additionalTime) {
     echo "fetching previous build duration"
     def lastBuild=Hudson.instance.getItem(branchName).getLastSuccessfulBuild()
     Float totalBuildTime=0.0
-    return (lastSuccessfullBuildTime(lastBuild,numberOfBuilds,totalBuildTime)/numberOfBuilds)*additionalTime
+    return (totalLastSuccessfulBuildTime(lastBuild,numberOfBuilds,totalBuildTime)/numberOfBuilds)*additionalTime
 }
-def lastSuccessfullBuildTime(previousBuild,numberOfBuilds,totalBuildTime) {
+def totalLastSuccessfulBuildTime(previousBuild,numberOfBuilds,totalBuildTime) {
   println("calling last successful build method")
   if(previousBuild != null && numberOfBuilds>0) {
     echo "Build time of last build is ${previousBuild.getDuration()/1000.0} seconds"
