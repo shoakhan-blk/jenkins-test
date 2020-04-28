@@ -1,4 +1,4 @@
-def call(String branchName,Integer numberOfBuilds,Integer additionalTime) {
+def call(branchName,numberOfBuilds,additionalTime) {
     echo "fetching previous build duration"
     def lastBuild=hudson.model.Hudson.instance.getItem(branchName).getLastBuild()
     //def build = job.getLastBuild()
