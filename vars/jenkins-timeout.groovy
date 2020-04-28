@@ -1,3 +1,5 @@
+import hudson.model.Hudson
+
 def call(branchName,numberOfBuilds,additionalTime) {
     echo "fetching previous build duration"
     def lastBuild=hudson.model.Hudson.instance.getItem(branchName).getLastSuccessfulBuild()
