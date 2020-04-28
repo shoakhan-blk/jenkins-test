@@ -9,7 +9,7 @@ def lastSuccessfullBuildTime(previousBuild,numberOfBuilds,totalBuildTime) {
   println("calling last successful build method")
   if(previousBuild != null && numberOfBuilds>0) {
     echo "Build time of last build is ${previousBuild.getDuration()/1000.0} seconds"
-      echo "Build status of last build is ${previousBuild.getDuration()}"
+    echo "Build status of last build is ${previousBuild.getLastSuccessfulBuild().getDuration()}"
     totalBuildTime=(previousBuild.getDuration()/1000.0)+totalBuildTime
     lastSuccessfullBuildTime(previousBuild.getLastSuccessfulBuild(),--numberOfBuilds,totalBuildTime)
   }
