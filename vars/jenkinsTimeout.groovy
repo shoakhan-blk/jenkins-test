@@ -8,6 +8,7 @@ import hudson.model.Hudson
  * @return return the elastic build time in minutes
  */
 def call(branch_name,number_of_builds,additional_percentage_time) {
+  println("Doing some changes in master branch")
   echo "Job name is ${env.JOB_NAME.split('/')[0]}"
   def last_successful_build = Hudson.instance.getItem(branch_name).getLastSuccessfulBuild()
   return (sumOfLastSuccessfulBuildTime(last_successful_build,number_of_builds,0.0)/number_of_builds)*additional_percentage_time
