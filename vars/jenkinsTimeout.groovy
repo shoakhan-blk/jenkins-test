@@ -1,18 +1,21 @@
+/**
 #!/usr/bin/env groovy
 import hudson.model.Hudson
-
+*/
 /**
  * @param branch_name name of the branch
  * @param number_of_builds number of builds to find the elastic time
  * @param additional_time additional time that gets added to the average build time
  * @return return the elastic build time in minutes
  */
+/**
 def call(branch_name,number_of_builds,additional_percentage_time) {
   println("Doing some changes in master branch")
   echo "Job name is ${env.JOB_NAME.split('/')[0]}"
   def last_successful_build = Hudson.instance.getItem(branch_name).getLastSuccessfulBuild()
   return (sumOfLastSuccessfulBuildTime(last_successful_build,number_of_builds,0.0)/number_of_builds)*additional_percentage_time
 }
+*/
 /**
  * Recusively calculate the sum of build time
  * @param last_successful_build last successful build 
@@ -20,6 +23,7 @@ def call(branch_name,number_of_builds,additional_percentage_time) {
  * @param total_build_time additional time that gets added to the average build time
  * @return return the total build time in minutes
  */
+/**
 def sumOfLastSuccessfulBuildTime(last_successful_build,number_of_builds,total_build_time) {
   if(last_successful_build != null && number_of_builds>0) {
     total_build_time = (last_successful_build.getDuration()/1000.0)+total_build_time
@@ -30,9 +34,9 @@ def sumOfLastSuccessfulBuildTime(last_successful_build,number_of_builds,total_bu
   }
 }
 return this
+ */
 
 
-/**
 #!/usr/bin/env groovy
 import hudson.model.Hudson
 
@@ -55,4 +59,4 @@ def totalLastSuccessfulBuildTime(previousBuild,numberOfBuilds,totalBuildTime) {
   }
 }
 return this
- */
+
